@@ -1,4 +1,11 @@
-# [Flask HTMLX](https://blog.appseed.us/flask-htmlx-material-kit-design/) Material Kit
+### Labeaux's notes
+
+I forked this from https://github.com/app-generator/sample-flask-htmlx-mkit
+
+The app will not create db file or tables automatically.
+Instead use flask shell one time to run db.create_all()
+
+## [Flask HTMLX](https://blog.appseed.us/flask-htmlx-material-kit-design/) Material Kit
 
 `Open-Source` sample that uses **Flask and HTMLx** for the frontend logic. For newcomers, `Flask` is a leading web framework powered by Python and `HTMLx` is a lightweight JS utility library that allows accessing AJAX, CSS Transitions, WebSockets, and Server-Sent Events directly in HTML. 
 Desing is provided by `Material Kit 2`, a modern Boostrap 5 desing (also free).
