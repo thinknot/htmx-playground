@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from app         import db
+from htmxapp         import db
 from flask_login import UserMixin
 from datetime    import datetime
 
@@ -26,13 +26,13 @@ class Users(db.Model, UserMixin):
 
     def save(self):
 
-        # inject self into db session    
+        # inject self into db session
         db.session.add ( self )
 
         # commit change and save the object
         db.session.commit( )
 
-        return self 
+        return self
 
 
 class Contact(db.Model):
@@ -53,10 +53,10 @@ class Contact(db.Model):
 
     def save(self):
 
-        # inject self into db session    
+        # inject self into db session
         db.session.add ( self )
 
         # commit change and save the object
         db.session.commit( )
 
-        return self 
+        return self
