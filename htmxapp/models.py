@@ -3,34 +3,33 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from htmxapp         import db
+from htmxapp import db
 from flask_login import UserMixin
-from datetime    import datetime
+from datetime import datetime
+
 
 class Users(db.Model, UserMixin):
-
     __tablename__ = 'Users'
 
-    id       = db.Column(db.Integer,     primary_key=True)
-    user     = db.Column(db.String(64),  unique = True)
-    email    = db.Column(db.String(120), unique = True)
+    id = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.String(64), unique=True)
+    email = db.Column(db.String(120), unique=True)
     password = db.Column(db.String(500))
 
     def __init__(self, user, email, password):
-        self.user       = user
-        self.password   = password
-        self.email      = email
+        self.user = user
+        self.password = password
+        self.email = email
 
     def __repr__(self):
         return str(self.id) + ' - ' + str(self.user)
 
     def save(self):
-
         # inject self into db session
-        db.session.add ( self )
+        db.session.add(self)
 
         # commit change and save the object
-        db.session.commit( )
+        db.session.commit()
 
         return self
 
@@ -44,19 +43,17 @@ class Contact(db.Model):
     message = db.Column(db.String())
     createdAt = db.Column(db.DateTime())
 
-    def __init__(self,name,email,message):
+    def __init__(self, name, email, message):
         self.name = name
         self.email = email
         self.message = message
-        self.createdAt =  datetime.now()
-
+        self.createdAt = datetime.now()
 
     def save(self):
-
         # inject self into db session
-        db.session.add ( self )
+        db.session.add(self)
 
         # commit change and save the object
-        db.session.commit( )
+        db.session.commit()
 
         return self
